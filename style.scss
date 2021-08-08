@@ -1,0 +1,162 @@
+:root {
+    --very-dark-gray: hsl(0, 0%, 17%);
+    --dark-gray: hsl(0, 0%, 59%);
+}
+
+*,
+html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+}
+
+.container {
+    height: 100%;
+    overflow: hidden;
+    // background: url(../images/pattern-bg.png) no-repeat;
+    // background-size: contain;
+    // background-position: top center;
+    position: relative;
+}
+
+.header {
+    height: 15.625rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1.25rem;
+    gap: 1.5625rem;
+    padding-top: 1.5625rem;
+    position: relative;
+    background: url(../images/pattern-bg.png) no-repeat;
+    background-size: cover;
+    background-position: top center;
+    z-index: 2;
+    >h1 {
+        color: white;
+        font-weight: 500;
+    }
+    .search {
+        width: 77%;
+        display: flex;
+        justify-content: center;
+        transition: all 0.4s ease;
+        >input {
+            position: relative;
+            width: 45%;
+            padding: 1.25rem 1.25rem;
+            outline: none;
+            font-size: 1.125rem;
+            font-weight: 500;
+            border: none;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            font-family: 'Rubik', sans-serif;
+        }
+        >.icon {
+            background: black;
+            padding: 20px 20px;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &:hover {
+                background: #403e3e;
+            }
+        }
+        @media screen and (max-width: 53.125rem) {
+            width: 85%;
+            >input {
+                width: 100%;
+            }
+        }
+    }
+    .details {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        // gap: 30px;
+        background: white;
+        padding: 30px 20px;
+        border-radius: 20px;
+        position: absolute;
+        top: 75%;
+        max-width: 77%;
+        flex-wrap: wrap;
+        box-shadow: -1px 4px 33px 2px rgba(0, 0, 0, 0.36);
+        -webkit-box-shadow: -1px 4px 33px 2px rgba(0, 0, 0, 0.36);
+        -moz-box-shadow: -1px 4px 33px 2px rgba(0, 0, 0, 0.36);
+        >:last-child {
+            border: none;
+        }
+        >div {
+            padding: 0 40px 20px 20px;
+            border-right: 0.5px solid #d8d5d5;
+            position: relative;
+            flex-grow: 1;
+            flex-basis: 0;
+            overflow-wrap: anywhere;
+            @media screen and (max-width: 53.125rem) {
+                border: none;
+            }
+        }
+        // &>div:after {
+        //     content: "";
+        //     display: block;
+        //     padding-top: 20px;
+        //     border-right: 1px solid #d8d5d5;
+        //     position: absolute;
+        //     right: 0;
+        //     top: 0;
+        //     height: 60%;
+        //     @media screen and (max-width: 53.125rem) {
+        //         display: none;
+        //     }
+        // }
+        &>div:last-child:after {
+            content: "";
+            display: none;
+        }
+        div>:first-child {
+            color: var(--dark-gray);
+            padding-bottom: 12px;
+            font-size: .75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        div>:last-child {
+            color: var(--very-dark-gray);
+            font-size: 1.125rem;
+            font-weight: 500;
+            font-size: 1.75rem;
+            border: none;
+        }
+        @media screen and (min-width: 43.75rem) and (max-width: 56.125rem) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media screen and (max-width: 53.125rem) {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+}
+
+.map {
+    // background: blue;
+    // height: 74vh;
+    overflow: hidden;
+    height: calc(100vh - 15.625rem);
+    z-index: 1;
+}
