@@ -6,7 +6,6 @@ const locationElement = document.querySelector("#location")
 const timezoneElement = document.querySelector("#timezone")
 const ispElement = document.querySelector("#isp")
 
-// const ipApiKey = "8c22a9655fcffc4fd221092a1c0b0f7a76747ad2c5ac1ab0f2ff74ed"
 const ipApiKey = 'at_RAHs0H4kxTidkUnjr1AxMFj3Uq18S'
 const geoIpUrl = `https://geo.ipify.org/api/v1?apiKey=${ipApiKey}`
 
@@ -22,7 +21,6 @@ async function json(url) {
 function setIpData(ipaddress) {
     json(
         `${geoIpUrl}&ipAddress=${ipaddress ? ipaddress : ""}`
-        // `https://api.ipdata.co/${ipaddress ? ipaddress : ""}?api-key=${ipApiKey}`
     ).then((data) => {
         console.log(data);
         ipData = data;

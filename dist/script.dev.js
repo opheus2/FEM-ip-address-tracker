@@ -6,8 +6,7 @@ var searchActionElement = document.querySelector("#search");
 var ipaddressElement = document.querySelector("#ipaddress");
 var locationElement = document.querySelector("#location");
 var timezoneElement = document.querySelector("#timezone");
-var ispElement = document.querySelector("#isp"); // const ipApiKey = "8c22a9655fcffc4fd221092a1c0b0f7a76747ad2c5ac1ab0f2ff74ed"
-
+var ispElement = document.querySelector("#isp");
 var ipApiKey = 'at_RAHs0H4kxTidkUnjr1AxMFj3Uq18S';
 var geoIpUrl = "https://geo.ipify.org/api/v1?apiKey=".concat(ipApiKey);
 var mapApiKey = "pk.eyJ1Ijoib3BoZXVzIiwiYSI6ImNpeGF5NjN1YzAwNmMyb29jMG4xenE0dnIifQ.DsyYT7XaF6qgKcB5kphFJQ";
@@ -31,8 +30,7 @@ function json(url) {
 }
 
 function setIpData(ipaddress) {
-  json("".concat(geoIpUrl, "&ipAddress=").concat(ipaddress ? ipaddress : "") // `https://api.ipdata.co/${ipaddress ? ipaddress : ""}?api-key=${ipApiKey}`
-  ).then(function (data) {
+  json("".concat(geoIpUrl, "&ipAddress=").concat(ipaddress ? ipaddress : "")).then(function (data) {
     console.log(data);
     ipData = data;
 
